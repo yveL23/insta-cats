@@ -10,6 +10,9 @@ const conn = require('./db/conn');
 
 // importar as tabelas - Models
 const User = require('./models/User');
+const Publication = require('./models/Publication');
+const Like = require('./models/Like');
+const Comment = require('./models/Comment');
 
 // importar as rotas - router
 const authRouters = require('./routes/auth.route');

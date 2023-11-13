@@ -1,13 +1,81 @@
 <nav>
     <div class="menu">
-        <img src="/assets/img/cat.png" alt="">
+        <a href="/">
+            <img src="/assets/img/cat.png" alt="">
+        </a>
         <ul class="content-navbar">
             <li class="nav-item">
-                <a href="nav-link active" aria-current="page" href="#">Login</a>
+                <a class="nav-link" href="/login" data-bs-toggle="modal" data-bs-target="#modalLogin">Login</a>
+                {{!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#login">
+                    Launch demo f
+                </button> --}}
             </li>
+    
             <li class="nav-item">
-                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalOpen">Register</a>
+                <a class="nav-link" href="/register" data-bs-toggle="modal" data-bs-target="#modalOpen">Register</a>
             </li>
         </ul>
     </div>
 </nav>
+
+{{!-- modal login --}}
+<div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="modalOpenLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalOpenLabel">Login</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="form-content" action="/register" method="POST">
+
+                    <div class="form-group">
+                        <label for="email">email</label>
+                        <input name="email" type="email" class="form-control" id="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">senha</label>
+                        <input name="password" type="password" class="form-control" id="password">
+                    </div>
+                    <button type="submit" class="btn-register">Entrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{!-- modal register --}}
+<div class="modal fade" id="modalOpen" tabindex="-1" aria-labelledby="modalOpenLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalOpenLabel">Cadastre-se</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="form-content" action="/register" method="POST">
+                    <div class="form-group">
+                        <label for="name" class="col-form-label">nome</label>
+                        <input name="name" type="text" class="form-control" id="name" aria-describedby="name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">email</label>
+                        <input name="email" type="email" class="form-control" id="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">senha</label>
+                        <input name="password" type="password" class="form-control" id="password">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">confirmar senha</label>
+                        <input name="password" type="password" class="form-control" id="password">
+                    </div>
+                    <button type="submit" class="btn-register">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
